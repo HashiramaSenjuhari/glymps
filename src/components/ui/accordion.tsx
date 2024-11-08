@@ -35,14 +35,14 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Tooltip>
-        <TooltipTrigger>
-          <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
-        </TooltipTrigger>
+      {/* <Tooltip>
+        <TooltipTrigger> */}
+      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      {/* </TooltipTrigger>
         <TooltipContent className=" bg-stone-600">
           Answer
         </TooltipContent>
-      </Tooltip>
+      </Tooltip> */}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

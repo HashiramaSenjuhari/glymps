@@ -4,17 +4,17 @@ import { Avatar, AvatarFallback, AvatarImage } from './avatar'
 import { session } from '@/service/auth.service'
 import Image from 'next/image'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './dropdown-menu'
-import { signOut } from '@/lib/auth'
+import { auth, signOut } from '@/lib/auth'
 
-const MainHeader = async () => {
-  let content = await session();
+export default async function MainHeader() {
+  let content = await auth();
   return (
     <>
       <SidebarTrigger className=" p-4 m-1" />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Avatar className="">
-            <AvatarImage src={content.user?.image as string} alt='' className="" />
+            <AvatarImage src={content?.user?.image as string} alt='' className="" />
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent side="bottom" className=" mr-6">
@@ -31,4 +31,3 @@ const MainHeader = async () => {
   )
 }
 
-export default MainHeader

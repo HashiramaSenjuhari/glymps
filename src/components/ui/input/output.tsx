@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Output = ({ question, answer, youtubelink }: { question: string, answer: string, youtubelink: string }) => {
+  console.log(youtubelink)
   return (
     <div>
       <div className=" flex gap-x-4">
@@ -39,7 +40,7 @@ const Output = ({ question, answer, youtubelink }: { question: string, answer: s
                 <hr />
                 <div className=' flex gap-x-4 items-center pb-2'>
                   <Image src={"/youtube.svg"} alt='' width={21} height={21} />
-                  <Link href={youtubelink} className=' hover:underline'>{youtubelink}</Link>
+                  <Link href={youtubelink as string} className=' hover:underline'>{youtubelink}</Link>
                 </div>
               </AccordionContent>
             </AccordionItem>

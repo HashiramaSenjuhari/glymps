@@ -28,6 +28,8 @@ model Questions {
   statement Statement[]
   userId    String      @db.ObjectId
   creation  DateTime    @default(now())
+  input     String
+  title     String
 }
 
 model Statement {
